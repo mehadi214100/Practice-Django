@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1 class="text-center mt-4 bg-primary text-white py-2">Home Page</h1>
+
+  <h2 class="my-4">Users</h2>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        {% for key in users.0.keys %}
+        <th scope="col">{{ key | capfirst }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <th scope="row">{{ user.id }}</th>
+        <td>{{user.name| title }}</td>
+        <td>{{user.email | default:"admin@email.com"}}</td>
+        <td>{{user.bio}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.joined | date:"d/m/y h:i:s"}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h2 class="my-4 ">Articles</h2>
+
+  <div class="mb-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for article in articles %}
+        <div class="col">
+            <div class="card h-100 border-success">
+                <div class="card-body">
+                    <h5 class="card-title text-success">{{article.title | title}}</h5>
+                    <p class="card-text">
+                    {{article.content |truncatewords:10 }}
+                    </p>
+
+                    {% for tag in article.tags %}
+                        <span class="badge  bg-{% cycle 'success' 'warning ' 'primary' 'secondary' 'danger' %} text-white">{{tag}}</span>
+                    {% endfor %}
+
+                    
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated {{article.published | timesince}}  ago</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    
+    </div>
+  </div>
+</div>
+{% endblock content %}
