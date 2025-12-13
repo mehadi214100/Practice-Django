@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container">
+        <h1 class="text-center py-2 text-white bg-primary mt-4">View Information</h1>
+
+        <div class="card mt-4">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Email : {{info.email}}</li>
+                <li class="list-group-item">Password : {{info.password}}</li>
+                <li class="list-group-item">Address : {{info.address}}</li>
+                <li class="list-group-item">City : {{info.city}}</li>
+                <li class="list-group-item">State : {{info.state}}</li>
+                <li class="list-group-item">Zip : {{info.zip}}</li>
+                
+            </ul>
+        </div>
+    </div>
+
+{% endblock content %}
