@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
 <div class="container">
   <h1 class="text-center mt-4 bg-primary text-white py-2">Home Page</h1>
 
@@ -54,5 +56,9 @@
     
     </div>
   </div>
+
+    <img src="{% static 'images/nature.png' %}" alt="nature image">
+    <img src="{% static 'images/camera.png' %}" alt="nature image">
+
 </div>
 {% endblock content %}
