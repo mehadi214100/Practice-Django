@@ -1,0 +1,1 @@
+{"name":"Local: graph","url":"d:\\Django\\graph.cpp","tests":[{"id":1765636845084,"input":"7 8\n1 2\n1 4\n2 4\n2 5\n3 4\n3 5\n5 6\n6 7","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Django\\graph.cpp","group":"local","local":true}
